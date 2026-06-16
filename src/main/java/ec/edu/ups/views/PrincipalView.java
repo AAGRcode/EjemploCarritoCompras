@@ -12,6 +12,10 @@ import ec.edu.ups.controllers.ProductoController;
  */
 public class PrincipalView extends javax.swing.JFrame {
     private CrearProductoView crearProductoView;
+    private BuscarProductoView buscarProductoView;
+    private EliminarProductoView eliminarProductoView;
+    private ActualizarProductoView actualizarProductoView;
+
     private ProductoController productoController;
     /**
      * Creates new form PrincipalView
@@ -100,15 +104,27 @@ public class PrincipalView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void actualizarProductoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarProductoMenuItemActionPerformed
-        System.exit(0);
+            if(actualizarProductoView == null || !actualizarProductoView.isVisible()){
+            actualizarProductoView = new ActualizarProductoView();
+            actualizarProductoView.setVisible(true);
+            desktopPane.add(actualizarProductoView);
+            }
     }//GEN-LAST:event_actualizarProductoMenuItemActionPerformed
 
     private void buscarProductoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarProductoMenuItemActionPerformed
-        // TODO add your handling code here:
+           if(buscarProductoView == null || !buscarProductoView.isVisible()){
+            buscarProductoView = new BuscarProductoView();
+            buscarProductoView.setVisible(true);
+            desktopPane.add(buscarProductoView);
+        }
     }//GEN-LAST:event_buscarProductoMenuItemActionPerformed
 
     private void eliminarProductoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarProductoMenuItemActionPerformed
-        // TODO add your handling code here:
+        if(eliminarProductoView == null || !eliminarProductoView.isVisible()){
+            eliminarProductoView = new EliminarProductoView();
+            eliminarProductoView.setVisible(true);
+            desktopPane.add(eliminarProductoView);
+        }
     }//GEN-LAST:event_eliminarProductoMenuItemActionPerformed
 
     private void crearProductoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearProductoMenuItemActionPerformed

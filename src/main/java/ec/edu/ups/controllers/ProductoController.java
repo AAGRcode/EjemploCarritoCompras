@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ec.edu.ups.controllers;
+package ec.edu.ups.controllers; 
 
 import ec.edu.ups.models.Producto;
+import ec.edu.ups.views.BuscarProductoView;
 import ec.edu.ups.views.CrearProductoView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,6 +17,7 @@ import java.awt.event.ActionListener;
 public class ProductoController {
     private Producto producto;
     private CrearProductoView crearProductoView;
+
 
     public ProductoController(CrearProductoView crearProdcutoView) {
         this.crearProductoView = crearProdcutoView;
