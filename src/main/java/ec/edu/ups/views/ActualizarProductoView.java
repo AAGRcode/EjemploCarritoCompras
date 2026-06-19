@@ -5,6 +5,7 @@
 package ec.edu.ups.views;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -20,12 +21,12 @@ public class ActualizarProductoView extends javax.swing.JInternalFrame {
         initComponents();
     }
 
-    public JButton getBtnAceptar2() {
-        return btnAceptar2;
+    public JButton getBtnAceptar() {
+        return btnAceptar;
     }
 
-    public void setBtnAceptar2(JButton btnAceptar2) {
-        this.btnAceptar2 = btnAceptar2;
+    public void setBtnAceptar(JButton btnAceptar) {
+        this.btnAceptar = btnAceptar;
     }
 
     public JButton getBtnActualizar() {
@@ -36,12 +37,20 @@ public class ActualizarProductoView extends javax.swing.JInternalFrame {
         this.btnActualizar = btnActualizar;
     }
 
-    public JButton getBtnCancelar1() {
-        return btnCancelar1;
+    public JButton getBtnCancelar() {
+        return btnCancelar;
     }
 
-    public void setBtnCancelar1(JButton btnCancelar1) {
-        this.btnCancelar1 = btnCancelar1;
+    public JButton getBtnBuscar() {
+        return btnBuscar;
+    }
+
+    public void setBtnBuscar(JButton btnBuscar) {
+        this.btnBuscar = btnBuscar;
+    }
+
+    public void setBtnCancelar(JButton btnCancelar) {
+        this.btnCancelar = btnCancelar;
     }
 
     public JTextField getTxtCodigo() {
@@ -52,20 +61,24 @@ public class ActualizarProductoView extends javax.swing.JInternalFrame {
         this.txtCodigo = txtCodigo;
     }
 
-    public JTextField getTxtCodigo2() {
-        return txtCodigo2;
+    public JTextField getTxtNombre() {
+        return txtNombre;
     }
 
-    public void setTxtCodigo2(JTextField txtCodigo2) {
-        this.txtCodigo2 = txtCodigo2;
+    public void setTxtNombre(JTextField txtNombre) {
+        this.txtNombre = txtNombre;
     }
 
-    public JTextField getTxtCodigo3() {
-        return txtCodigo3;
+    public JTextField getTxtPrecio() {
+        return txtPrecio;
     }
 
-    public void setTxtCodigo3(JTextField txtCodigo3) {
-        this.txtCodigo3 = txtCodigo3;
+    public void setTxtPrecio(JTextField txtPrecio) {
+        this.txtPrecio = txtPrecio;
+    }
+
+    public void mostrarInformacion(String mensaje){
+        JOptionPane.showMessageDialog(this, mensaje);
     }
     
     
@@ -79,14 +92,15 @@ public class ActualizarProductoView extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txtCodigo2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtCodigo3 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
-        btnAceptar2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtPrecio = new javax.swing.JTextField();
+        btnAceptar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
-        btnCancelar1 = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -97,18 +111,20 @@ public class ActualizarProductoView extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Nombre");
 
-        txtCodigo3.addActionListener(this::txtCodigo3ActionPerformed);
+        txtNombre.addActionListener(this::txtNombreActionPerformed);
 
         jLabel3.setText("Precio");
 
-        btnAceptar2.setText("Aceptar");
-        btnAceptar2.addActionListener(this::btnAceptar2ActionPerformed);
+        btnAceptar.setText("Aceptar");
+        btnAceptar.addActionListener(this::btnAceptarActionPerformed);
 
         btnActualizar.setText("Actualizar");
         btnActualizar.addActionListener(this::btnActualizarActionPerformed);
 
-        btnCancelar1.setText("Cancelar");
-        btnCancelar1.addActionListener(this::btnCancelar1ActionPerformed);
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(this::btnCancelarActionPerformed);
+
+        btnBuscar.setText("Buscar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,22 +138,24 @@ public class ActualizarProductoView extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(44, 44, 44)
-                                .addComponent(txtCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
+                                .addComponent(txtPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(33, 33, 33)
-                                .addComponent(txtCodigo3))
+                                .addComponent(txtNombre))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(38, 38, 38)
-                                .addComponent(txtCodigo2, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)))
+                                .addComponent(txtCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)))
                         .addGap(52, 52, 52))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAceptar2)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnAceptar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnActualizar)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(btnCancelar1)))
+                        .addComponent(btnCancelar)))
                 .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
@@ -146,19 +164,21 @@ public class ActualizarProductoView extends javax.swing.JInternalFrame {
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtCodigo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(txtCodigo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                    .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnBuscar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAceptar2)
-                    .addComponent(btnCancelar1)
+                    .addComponent(btnAceptar)
+                    .addComponent(btnCancelar)
                     .addComponent(btnActualizar))
                 .addGap(54, 54, 54))
         );
@@ -166,32 +186,33 @@ public class ActualizarProductoView extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCodigo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo3ActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigo3ActionPerformed
+    }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void btnAceptar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptar2ActionPerformed
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAceptar2ActionPerformed
+    }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnActualizarActionPerformed
 
-    private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
-    }//GEN-LAST:event_btnCancelar1ActionPerformed
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAceptar2;
+    private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnActualizar;
-    private javax.swing.JButton btnCancelar1;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextField txtCodigo2;
-    private javax.swing.JTextField txtCodigo3;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtPrecio;
     // End of variables declaration//GEN-END:variables
 }

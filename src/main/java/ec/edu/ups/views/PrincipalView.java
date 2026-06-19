@@ -4,6 +4,8 @@
  */
 package ec.edu.ups.views;
 
+import ec.edu.ups.carrito.dao.ProductoDAO;
+import ec.edu.ups.carrito.dao.ProductoDAOMemoria;
 import ec.edu.ups.controllers.ProductoController;
 
 /**
@@ -15,6 +17,7 @@ public class PrincipalView extends javax.swing.JFrame {
     private BuscarProductoView buscarProductoView;
     private EliminarProductoView eliminarProductoView;
     private ActualizarProductoView actualizarProductoView;
+    private ProductoDAO productoDAO;
 
     private ProductoController productoController;
     /**
@@ -22,6 +25,19 @@ public class PrincipalView extends javax.swing.JFrame {
      */
     public PrincipalView() {
         initComponents();
+        productoDAO = new ProductoDAOMemoria();
+
+        crearProductoView = new CrearProductoView();
+        buscarProductoView = new BuscarProductoView();
+        actualizarProductoView = new ActualizarProductoView();
+        eliminarProductoView = new EliminarProductoView();
+
+        desktopPane.add(crearProductoView);
+        desktopPane.add(buscarProductoView);
+        desktopPane.add(actualizarProductoView);
+        desktopPane.add(eliminarProductoView);
+
+        productoController = new ProductoController(productoDAO, crearProductoView, buscarProductoView, actualizarProductoView, eliminarProductoView);
     }
 
     /**
@@ -102,35 +118,34 @@ public class PrincipalView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void actualizarProductoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarProductoMenuItemActionPerformed
-            if(actualizarProductoView == null || !actualizarProductoView.isVisible()){
-            actualizarProductoView = new ActualizarProductoView();
+        if(!actualizarProductoView.isVisible()){
+            desktopPane.remove(actualizarProductoView);
             actualizarProductoView.setVisible(true);
             desktopPane.add(actualizarProductoView);
             }
     }//GEN-LAST:event_actualizarProductoMenuItemActionPerformed
 
     private void buscarProductoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarProductoMenuItemActionPerformed
-           if(buscarProductoView == null || !buscarProductoView.isVisible()){
-            buscarProductoView = new BuscarProductoView();
+        if(!buscarProductoView.isVisible()){
+            desktopPane.remove(buscarProductoView);
             buscarProductoView.setVisible(true);
             desktopPane.add(buscarProductoView);
         }
     }//GEN-LAST:event_buscarProductoMenuItemActionPerformed
 
     private void eliminarProductoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarProductoMenuItemActionPerformed
-        if(eliminarProductoView == null || !eliminarProductoView.isVisible()){
-            eliminarProductoView = new EliminarProductoView();
+        if(!eliminarProductoView.isVisible()){
+            desktopPane.remove(eliminarProductoView);
             eliminarProductoView.setVisible(true);
             desktopPane.add(eliminarProductoView);
         }
     }//GEN-LAST:event_eliminarProductoMenuItemActionPerformed
 
     private void crearProductoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearProductoMenuItemActionPerformed
-        if(crearProductoView == null || !crearProductoView.isVisible()){
-            crearProductoView = new CrearProductoView();
-            productoController = new ProductoController(crearProductoView);
+        if(!crearProductoView.isVisible()){
+            desktopPane.remove(crearProductoView);
             crearProductoView.setVisible(true);
             desktopPane.add(crearProductoView);
         }
